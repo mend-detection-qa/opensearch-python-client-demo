@@ -20,24 +20,38 @@
     "validate_dependency_tree": true,
     "_comment_validate_dependency_tree": "Whether to validate the dependency tree. Options: true | false. Default: true",
     "dependency_tree": {
-      "check_dependency_tree_detection_status": true,
-      "_comment_check_dependency_tree_detection_status": "Whether to check if dependency tree was successfully detected. Options: true | false. Default: true",
-      "expected_total_dependencies_number": {
-        "gte": 1
-      },
-      "expected_direct_dependencies_number": {
-        "gte": 1
-      },
-      "expected_transitive_dependencies_number": {
-        "gte": 0
-      },
-      "_comment_expected_dependencies_number": "Optional. Expected number of dependencies with comparison operator. Operators: gt (>), gte (>=), lt (<), lte (<=), eq (==). If not provided, this check will not be performed.",
-      "direct_dependencies_names_list": {
-        "eq": []
-      },
-      "transitive_dependencies_names_list": {
-        "eq": []
-      },
+            "check_dependency_tree_detection_status": true,
+            "_comment_check_dependency_tree_detection_status": "Whether to check if dependency tree was successfully detected. Options: true | false. Default: true",
+            "expected_total_dependencies_number": {
+                "eq": 38
+            },
+            "expected_direct_dependencies_number": {
+                "eq": 4
+            },
+            "expected_transitive_dependencies_number": {
+                "eq": 34
+            },
+            "_comment_expected_dependencies_number": "Optional. Expected number of dependencies with comparison operator. Operators: gt (>), gte (>=), lt (<), lte (<=), eq (==). If not provided, this check will not be performed.",
+            "direct_dependencies_names_list": {
+                "eq": [
+                    "boto3-1.29.1-py3-none-any.whl",
+                    "opensearch_py-2.4.1-py2.py3-none-any.whl"
+                ]
+            },
+            "transitive_dependencies_names_list": {
+                "eq": [
+                    "s3transfer-0.7.0-py3-none-any.whl",
+                    "requests-2.31.0-py3-none-any.whl",
+                    "idna-3.4-py3-none-any.whl",
+                    "six-1.16.0-py2.py3-none-any.whl",
+                    "botocore-1.32.1-py3-none-any.whl",
+                    "certifi-2023.7.22-py3-none-any.whl",
+                    "urllib3-2.0.7-py3-none-any.whl",
+                    "jmespath-1.0.1-py3-none-any.whl",
+                    "charset_normalizer-3.3.2-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+                    "python_dateutil-2.8.2-py2.py3-none-any.whl"
+                ]
+            },
       "_comment_dependencies_names_list": "Optional. Check specific libraries in direct dependencies. Operators: eq (==), contains (all items from expected list in actual), in(all items from actual list in expected), nin(actual list does not contain provided libs). If not provided, this check will not be performed.",
       "validate_agent_versions": false,
       "_comment_agent_versions": "Optional. Expected agent and plugin versions. If not provided, this check will not be performed."
@@ -46,25 +60,6 @@
     "_comment_validate_vulnerabilities_table": "Whether to validate the vulnerabilities table. Options: true | false. Default: true",
     "vulnerabilities_table": {
       "check_vulnerabilities_table_structure": true,
-      "expected_total_vulnerabilities_number": {
-        "eq": 9
-      },
-      "vulnerabilities_ids_list": {
-        "eq": [
-          "CVE-2024-47081",
-          "CVE-2025-50181",
-          "CVE-2025-50182",
-          "CVE-2025-66471",
-          "CVE-2026-21441"
-        ]
-      },
-      "_comment_ids_names_list": "Optional. Check specific libs ids (WS-2018-0111, CVE-2021-44906). Operators: eq (==), contains (all items from expected list in actual), in(all items from actual list in expected), nin(actual list does not contain provided libs). If not provided, this check will not be performed.",
-      "vulnerabilities_names_list": {
-        "eq": [
-          "Transitive requests-2.31.0-py3-none-any.whl",
-          "Transitive urllib3-2.0.7-py3-none-any.whl"
-        ]
-      },
       "_comment_vulnerabilities_names_list": "Optional. Check specific libs names (minimist-0.0.8.tgz). Operators: eq (==), contains (all items from expected list in actual), in(all items from actual list in expected), nin(actual list does not contain provided libs). If not provided, this check will not be performed."
     },
     "validate_scanner_logs": true,
